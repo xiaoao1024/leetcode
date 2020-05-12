@@ -28,6 +28,7 @@ func Test_reverse(t *testing.T) {
 	fmt.Println("size of bool:", unsafe.Sizeof(f))
 	fmt.Println("size of rune:", unsafe.Sizeof(g))
 
+	// 测试内存对齐
 	fmt.Println("size of class a:", unsafe.Sizeof(classA))
 	fmt.Println("size of class b:", unsafe.Sizeof(classB))
 }
@@ -42,4 +43,11 @@ type ClassB struct {
 	A int8
 	B int16
 	C int64
+}
+
+func TestReverse(t *testing.T) {
+	fmt.Println(reverse(123))
+	fmt.Println(reverse(-123))
+	fmt.Println(reverse(1230))
+	fmt.Println(reverse(-1230))
 }
